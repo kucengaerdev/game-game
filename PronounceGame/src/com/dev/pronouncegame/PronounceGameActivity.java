@@ -174,6 +174,7 @@ public class PronounceGameActivity extends Activity {
 					chanceText.setText(chanceString);
 					animateChance();
 					if (chance < 1) {
+						kurangiscore();
 						createAlertBuilder();
 						animateStart();
 						statustext.setVisibility(View.VISIBLE);
@@ -182,10 +183,7 @@ public class PronounceGameActivity extends Activity {
 					} else {
 						if (score > 0) {
 
-							score -= 5;
-							String scoreString = Integer.toString(score);
-							scoretext.setText(scoreString);
-							animateScore();
+							kurangiscore();
 							indexrand = rand.nextInt(list.size());
 							randtext = list.get(indexrand);
 							textrand.setText(randtext);
@@ -208,6 +206,13 @@ public class PronounceGameActivity extends Activity {
 			break;
 
 		}
+	}
+
+	private void kurangiscore() {
+		score -= 5;
+		String scoreString = Integer.toString(score);
+		scoretext.setText(scoreString);
+		animateScore();
 	}
 
 	private void createAlertBuilder() {
