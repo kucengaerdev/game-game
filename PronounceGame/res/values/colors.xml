@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_awal">#09F8E4</color>
+    <color name="bg_ahir">#f9caa4</color>
+    <color name="bgtengah">#9B63F8</color>
+    <color name="text">#FFFFFF</color>
+    
+</resources>

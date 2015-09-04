@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_layout"
+    android:orientation="vertical" >
+    
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/score"/>
+        <TextView 
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/score_def"/>
+         <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/chance"/>
+        <TextView 
+            android:id="@+id/chance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+            
+    </LinearLayout>
+    
+    <Button 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:id="@+id/button_start"
+            android:layout_marginEnd="20dp"
+            android:text="@string/button_mulai"/>
+    <TextView 
+            android:id="@+id/state"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+    
+    <TextView 
+            android:id="@+id/textrand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="180dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            android:textSize="25sp"/>
+    
+
+</LinearLayout>

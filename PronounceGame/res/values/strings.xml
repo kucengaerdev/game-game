@@ -1,0 +1,33 @@
+<resources>
+
+    <string name="app_name">PronounceGame</string>
+    <string name="score">Score : </string>
+    <string name="score_def">0</string>
+    <string name="error_supp">Your Devices Not Support.</string>
+    <string name="prompt_speech">speech please</string>
+    <string name="benar">You Right</string>
+    <string name="salah">You Wrong</string>
+    <string name="button_mulai">Start To Speak</string>
+    <string name="new_game">New Game</string>
+    <string name="about_game">About </string>
+    <string name="score_game">All Score</string>
+    <string name="help_game">Help</string>
+    <string name="endlose">You Are Lose</string>
+    <string name="endwin">Congratulation, You Won</string>
+    <string name="chance">Chance : </string>
+    <string name="about_text">Permainan Pengucapan dibuat oleh kucengaerdev laboratory.\n
+        dengan team yang terdiri oleh :\n
+        1. kucengaer aka rizky.\n
+        2. kucengapi aka arbaun z m.\n email \u003c yujimaarif.ym@gmail.com \u003e.\n
+        game ini dibuat untuk tujuan hiburan dan edukasi dengan licensi gnu gpl.
+    </string>
+    <string name="help_text">Cara bermain sebagai berikut :\n
+        1. tekan actionbar menu di pojok kanan atas dan pilih menu yang tersedia.\n
+        2. ucapkan kata yang muncul pada layar bagian bawah.\n
+        3. setiap kata yang benar pronouncenya mendapat nilai 10 dan jika salah dikurangi 5.\n
+        4. maksimal nilai adalah 100.\n
+    </string>
+    <string name="empty">Data Empty.</string>
+    
+
+</resources>
