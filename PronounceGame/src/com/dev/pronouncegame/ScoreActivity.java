@@ -6,7 +6,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -50,10 +49,8 @@ public class ScoreActivity extends Activity {
 	
 	private void setList() {
 		// TODOs Auto-generated method stub
-		Uri url = Uri
-				.parse("content://com.dev.pronouncegame.scoredatabaseprovider/element");
-		Cursor cursor = ScoreActivity.this.getContentResolver().query(
-				url, projection, null, null, null);
+		SQLiteDatabase db = dbg.getReadableDatabase();
+	   	 Cursor cursor = db.rawQuery("select * from Score order by Nilai DESC",null);
 		cursor.moveToFirst();
 		int i=1;
 		do {
