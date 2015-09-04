@@ -10,7 +10,7 @@
     <string name="button_mulai">Start To Speak</string>
     <string name="new_game">New Game</string>
     <string name="about_game">About </string>
-    <string name="score_game">All Score</string>
+    <string name="score_game">Rank</string>
     <string name="help_game">Help</string>
     <string name="endlose">You Are Lose</string>
     <string name="endwin">Congratulation, You Won</string>
