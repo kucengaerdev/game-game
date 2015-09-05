@@ -181,7 +181,6 @@ public class PronounceGameActivity extends Activity {
 						statustext.setText(getString(R.string.endlose));
 						animateStatus();
 					} else {
-						if (score > 0) {
 
 							kurangiscore();
 							indexrand = rand.nextInt(list.size());
@@ -190,17 +189,7 @@ public class PronounceGameActivity extends Activity {
 							animateRandomText();
 							startSpeech();
 
-						} else {
-							String scoreString = Integer.toString(score);
-							scoretext.setText(scoreString);
-							animateScore();
-							indexrand = rand.nextInt(list.size());
-							randtext = list.get(indexrand);
-							textrand.setText(randtext);
-							animateRandomText();
-							startSpeech();
-						}
-					}
+					} 
 				}
 			}
 			break;
@@ -209,10 +198,14 @@ public class PronounceGameActivity extends Activity {
 	}
 
 	private void kurangiscore() {
-		score -= 5;
-		String scoreString = Integer.toString(score);
-		scoretext.setText(scoreString);
-		animateScore();
+		if(score<1){
+			
+		}else{
+		    score -= 5;
+		    String scoreString = Integer.toString(score);
+		    scoretext.setText(scoreString);
+		    animateScore();
+		}
 	}
 
 	private void createAlertBuilder() {
