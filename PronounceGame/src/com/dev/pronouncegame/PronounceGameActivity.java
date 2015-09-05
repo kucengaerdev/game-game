@@ -222,10 +222,9 @@ public class PronounceGameActivity extends Activity {
 						// What ever you want to do with the value
 
 						String nama = edittext.getText().toString();
-						String nilai = Integer.toString(score);
 						ContentValues values = new ContentValues();
 						values.put("Nama", nama);
-						values.put("Nilai", nilai);
+						values.put("Nilai", score);
 
 						PronounceGameActivity.this
 								.getContentResolver()

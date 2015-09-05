@@ -56,9 +56,10 @@ public class ScoreActivity extends Activity {
 		do {
 
 			String nama = cursor.getString(cursor.getColumnIndex("Nama"));
-			String nilai = cursor.getString(cursor.getColumnIndex("Nilai"));
+			int nilai = cursor.getInt(cursor.getColumnIndex("Nilai"));
+			String nilaiString = Integer.toString(nilai);
 			String nomer = Integer.toString(i)+".";
-			list.add(new ScoreItem(nama, nilai,nomer));
+			list.add(new ScoreItem(nama, nilaiString,nomer));
 			i++;
 
 		} while (cursor.moveToNext());

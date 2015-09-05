@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseGame extends SQLiteOpenHelper {
 	
 	private static final String DATABASE_NAME = "games.db";
-	private static final int DATABASE_VERSION = 1;
+	private static final int DATABASE_VERSION = 2;
 	
 	public  final String TABLE_SCORE = "Score";
 	public  final String TABLE_KATA = "Kata";
@@ -22,10 +22,10 @@ public class DatabaseGame extends SQLiteOpenHelper {
 	public  final String KATA = "kata";
 	
 	//create table kata
-	private final String CREATE_TABLE_KATA = "create table "+TABLE_KATA+" ("+ID+" integer primary key,"+KATA+" text);";
+	private final String CREATE_TABLE_KATA = "create table "+TABLE_KATA+" ("+ID+" integer primary key,"+KATA+" text not null);";
 	
 	//create table score
-	private final String CREATE_TABLE_SCORE = "create table "+TABLE_SCORE+" ("+ID+" integer primary key,"+NAMA+" text,"+NILAI+" text);";
+	private final String CREATE_TABLE_SCORE = "create table "+TABLE_SCORE+" ("+ID+" integer primary key,"+NAMA+" text not null,"+NILAI+" integer not null);";
 	
 	public DatabaseGame(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
