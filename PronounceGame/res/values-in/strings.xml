@@ -6,12 +6,12 @@
     <string name="score_def">0</string>
     <string name="error_supp">Device Tidak Mendukung.</string>
     <string name="prompt_speech">silakan berbicara</string>
-    <string name="benar">Kamu Benar</string>
+    <string name="benar">Benar</string>
     <string name="chance">Kesempatan : </string>
     <string name="endlose">Kamu Kalah</string>
     <string name="button_mulai">Mulai Berbicara</string>
     <string name="endwin">Selamat, Kamu Menang</string>
-    <string name="salah">Kamu Salah</string>
+    <string name="salah">Salah</string>
     <string name="about_text">Permainan Pengucapan dibuat oleh kucengaerdev laboratory.\n
         dengan team yang terdiri oleh :\n
         1. kucengaer aka rizky\n
