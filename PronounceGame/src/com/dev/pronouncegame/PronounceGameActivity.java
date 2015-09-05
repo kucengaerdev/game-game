@@ -220,17 +220,22 @@ public class PronounceGameActivity extends Activity {
 				new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int whichButton) {
 						// What ever you want to do with the value
-
 						String nama = edittext.getText().toString();
-						ContentValues values = new ContentValues();
-						values.put("Nama", nama);
-						values.put("Nilai", score);
+						if(nama.length()>0){
+						   ContentValues values = new ContentValues();
+						   values.put("Nama", nama);
+						   values.put("Nilai", score);
 
-						PronounceGameActivity.this
+						   PronounceGameActivity.this
 								.getContentResolver()
 								.insert(Uri
 										.parse("content://com.dev.pronouncegame.scoredatabaseprovider/element"),
 										values);
+						}else{
+							
+						}
+						
+						dialog.cancel();
 
 					}
 				});
