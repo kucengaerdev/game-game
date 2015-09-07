@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseGame extends SQLiteOpenHelper {
 	
 	private static final String DATABASE_NAME = "games.db";
-	private static final int DATABASE_VERSION = 2;
+	private static final int DATABASE_VERSION = 3;
 	
 	public  final String TABLE_SCORE = "Score";
 	public  final String TABLE_KATA = "Kata";

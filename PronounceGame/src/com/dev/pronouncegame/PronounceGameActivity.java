@@ -32,12 +32,12 @@ public class PronounceGameActivity extends Activity {
 	private ArrayList<String> list = new ArrayList<String>();
 	private String randtext, chanceString;
 	String[] projection = { "kata" };
-	String[] alldata = { "apple", "air conditiener", "ancient", "bird",
+	String[] alldata = { "apple", "air conditioner", "ancient", "bird",
 			"birth", "connect", "create", "chinese", "database", "dog",
 			"delete", "elephant", "eleven", "great", "drug", "hangout",
-			"increase", "javanesse", "japanesse", "walk", "mango", "tiger",
+			"increase", "javanese", "japanese", "walk", "mango", "tiger",
 			"lion", "snake", "legend", "play", "stop", "point", "community",
-			"basic" };
+			"basic","spell","speak","public","common","enemy","water melon" };
 	private int score = 0;
 	DatabaseGame dbg;
 	private int chance = 3;
