@@ -11,6 +11,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -32,10 +34,17 @@ public class ScoreActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.score_all);
 	    dbg = new DatabaseGame(this);
+	    Animation a = AnimationUtils.loadAnimation(this, R.anim.spin_anime);
+	    Animation b = AnimationUtils.loadAnimation(this, R.anim.animasi_kanankiri);
+	    a.reset();
+	    b.reset();
 	    vie = (TextView)findViewById(R.id.empty_text);
 	    view = (ListView)findViewById(R.id.list_score);
 	    adapter = new ScoreAdapter(ScoreActivity.this, R.layout.row_layout, list);
 	    view.setAdapter(adapter);
+	    view.clearAnimation();
+	    view.setAnimation(a);
+	    view.setAnimation(b);
 	    if(exists()){	
 	    	
 	    	if(list.size()>0){
@@ -43,6 +52,10 @@ public class ScoreActivity extends Activity {
 	    	}
 	    	setList();
 	    	vie.setVisibility(View.INVISIBLE);
+	    }else{
+	    	vie.clearAnimation();
+		    vie.setAnimation(a);
+		    vie.setAnimation(b);
 	    }
 	    adapter.notifyDataSetChanged();
 	}
