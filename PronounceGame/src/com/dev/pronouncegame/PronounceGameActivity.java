@@ -15,6 +15,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
+import android.speech.tts.TextToSpeech;
+import android.speech.tts.TextToSpeech.OnInitListener;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -27,7 +29,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class PronounceGameActivity extends Activity {
+public class PronounceGameActivity extends Activity implements OnInitListener {
 
 	private ArrayList<String> list = new ArrayList<String>();
 	private String randtext, chanceString;
@@ -39,10 +41,12 @@ public class PronounceGameActivity extends Activity {
 			"lion", "snake", "legend", "play", "stop", "point", "community",
 			"basic","spell","speak","public","common","enemy","water melon" };
 	private int score = 0;
+	private TextToSpeech tts;
 	DatabaseGame dbg;
 	private int chance = 3;
 	private int indexrand;
 	private Random rand;
+	private final int KODE_CEK=0;
 	private TextView scoretext, textrand, chanceText, statustext;
 	private Button start;
 	private Animation z, x;
@@ -106,6 +110,10 @@ public class PronounceGameActivity extends Activity {
 					PronounceGameActivity.this, PronounceGameActivity.class));
 
 		}
+		
+		Intent intentNew  = new Intent();
+		intentNew.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
+		startActivityForResult(intentNew, KODE_CEK);
 
 	}
 
@@ -147,6 +155,7 @@ public class PronounceGameActivity extends Activity {
 					Toast.makeText(getApplicationContext(),
 							getString(R.string.benar), Toast.LENGTH_SHORT)
 							.show();
+					tts.speak("You Right!!", TextToSpeech.QUEUE_ADD, null);
 					score += 10;
 					String scoreString = Integer.toString(score);
 					scoretext.setText(scoreString);
@@ -169,6 +178,7 @@ public class PronounceGameActivity extends Activity {
 					Toast.makeText(getApplicationContext(),
 							getString(R.string.salah), Toast.LENGTH_SHORT)
 							.show();
+					tts.speak("The Right Answer Is "+randtext, TextToSpeech.QUEUE_ADD, null);
 					chance -= 1;
 					chanceString = Integer.toString(chance);
 					chanceText.setText(chanceString);
@@ -191,6 +201,17 @@ public class PronounceGameActivity extends Activity {
 
 					} 
 				}
+			}
+			break;
+			
+		case KODE_CEK:
+			if(resultCode == TextToSpeech.Engine.CHECK_VOICE_DATA_PASS){
+				//succes bray
+				tts = new TextToSpeech(this, this);
+			}else{
+				Intent intentInstall = new Intent();
+				intentInstall.setAction(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
+				startActivity(intentInstall);
 			}
 			break;
 
@@ -351,6 +372,16 @@ public class PronounceGameActivity extends Activity {
 			return true;
 		} else {
 			return false;
+		}
+	}
+
+	@Override
+	public void onInit(int status) {
+		// TODOs Auto-generated method stub
+		if(status == TextToSpeech.SUCCESS){
+			Toast.makeText(PronounceGameActivity.this,"berhasil inisiasi text to speech", Toast.LENGTH_LONG).show();
+		}else{
+			Toast.makeText(PronounceGameActivity.this,"gagal inisiasi text to speech", Toast.LENGTH_LONG).show();
 		}
 	}
 
